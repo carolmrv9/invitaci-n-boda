@@ -54,6 +54,35 @@
             border: none;
             margin-top: 20px;
         }
+
+        /* Estilo del slider de imágenes */
+        .slider {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin: auto;
+            overflow: hidden;
+        }
+        .slides {
+            display: flex;
+            transition: transform 1s ease;
+        }
+        .slides img {
+            width: 100%;
+            height: auto;
+        }
+        /* Controles de navegación */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 16px;
+            cursor: pointer;
+        }
+        .prev { left: 0; }
+        .next { right: 0; }
     </style>
 </head>
 <body>
@@ -65,7 +94,7 @@
         <h1 class="titulo">¡Estás invitado a nuestra boda!</h1>
         
         <!-- Imagen principal de la boda -->
-        <img class="imagen-boda" DALL·E 2024-11-25 14.24.41 - A magical wedding scene inspired by Disney movies style, featuring the same couple as in the original image, standing in a stunning Cochabamba, Bolivi.webp" alt="Invitación de boda" />
+        <img class="imagen-boda" src="Cream_and_Brown_Minimalist_Illustrative_Wedding_Virtual_Invitation_6.png" alt="Invitación de boda" />
         
         <p class="mensaje">Tenemos el gusto de invitarte en este día tan importante de nuestras vidas a nuestra boda.</p>
         <h2 class="titulo">Stian y Carol</h2>
@@ -76,17 +105,48 @@
         
         <!-- Línea de tiempo -->
         <div class="linea-tiempo">
-            <img src="ruta-de-tu-imagen-de-linea-tiempo.jpg" alt="Línea de tiempo de la boda" />
+            <img src="Cream and Brown Minimalist Illustrative Weeding Virtual Invitation.jpg" alt="Línea de tiempo de la boda" />
         </div>
-        
+
+        <!-- Slider de imágenes (galería) -->
+        <div class="slider">
+            <div class="slides">
+                <img src="" alt="Imagen 1">
+                <img src="imagen2.jpg" alt="Imagen 2">
+                <img src="imagen3.jpg" alt="Imagen 3">
+                <!-- Agrega más imágenes si lo deseas -->
+            </div>
+            <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+            <a class="next" onclick="moveSlide(1)">&#10095;</a>
+        </div>
+
         <!-- Código QR -->
         <div class="codigo-qr">
             <p>Escanea el código QR para conocer la ubicación:</p>
-            <img src="" alt="Código QR" />
+            <img src="qr.jpeg" alt="Código QR" />
         </div>
 
         <p>💌 Sugerencia de regalo: dinero en efectivo</p>
+        <img src="dinero.jpeg" alt="Sugerencia de regalo" />
     </div>
+
+    <script>
+        // Variables
+        let slideIndex = 0;
+
+        // Función para mover las imágenes del slider
+        function moveSlide(step) {
+            const slides = document.querySelector('.slides');
+            const totalSlides = slides.children.length;
+            slideIndex = (slideIndex + step + totalSlides) % totalSlides;
+            slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+        }
+
+        // Iniciar el slider automáticamente
+        setInterval(() => {
+            moveSlide(1); // Mover una imagen cada 5 segundos
+        }, 5000);
+    </script>
 
 </body>
 </html>
