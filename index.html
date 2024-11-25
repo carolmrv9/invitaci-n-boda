@@ -7,61 +7,66 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            text-align: center;
-            background-color: #F9E6D3;
             margin: 0;
             padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
         }
-        .invitacion {
-            background-color: #FAF1E4;
-            margin: 30px;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 80%;
-            max-width: 700px;
-            margin: auto;
-        }
-        .titulo {
-            font-size: 2.5em;
-            color: #5A3F47;
-        }
-        .mensaje {
-            font-size: 1.2em;
-            margin: 20px 0;
-        }
-        .linea-tiempo img {
+        
+        .container {
             width: 100%;
-            height: auto;
-        }
-        .imagen-boda {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-        .codigo-qr {
-            text-align: left;
-            padding-left: 20px;
-            margin-top: 20px;
-        }
-        .codigo-qr img {
-            width: 100px;
-            height: 100px;
-        }
-        iframe {
-            width: 100%;
-            height: 315px;
-            border: none;
-            margin-top: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
-        /* Estilo del slider de imágenes */
+        /* Header */
+        header {
+            text-align: center;
+            background-color: #F9E6D3;
+            padding: 40px 0;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            color: #5A3F47;
+            margin: 0;
+        }
+
+        header h2 {
+            font-size: 2.5em;
+            color: #d25d6f;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* Texto de la invitación */
+        .message {
+            font-size: 1.2em;
+            text-align: center;
+            margin: 20px;
+            line-height: 1.5;
+        }
+
+        /* Imágenes */
+        .main-image, .timeline-image, .qr-image {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto 30px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Slider de imágenes */
         .slider {
             position: relative;
             width: 100%;
-            max-width: 700px;
-            margin: auto;
+            max-width: 800px;
+            margin: 0 auto;
             overflow: hidden;
+            border-radius: 10px;
         }
         .slides {
             display: flex;
@@ -71,86 +76,164 @@
             width: 100%;
             height: auto;
         }
-        /* Controles de navegación */
         .prev, .next {
             position: absolute;
             top: 50%;
-            transform: translateY(-50%);
             background-color: rgba(0, 0, 0, 0.5);
             color: white;
-            padding: 16px;
+            padding: 10px;
             cursor: pointer;
+            transform: translateY(-50%);
         }
         .prev { left: 0; }
         .next { right: 0; }
+
+        /* Detalles de la boda */
+        .details {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .details div {
+            width: 30%;
+            padding: 20px;
+            background-color: #FAF1E4;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .details h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .confirm-btn {
+            display: inline-block;
+            background-color: #d25d6f;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1.2em;
+            text-decoration: none;
+            text-align: center;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .confirm-btn:hover {
+            background-color: #5A3F47;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #888;
+        }
+
+        footer p {
+            font-size: 1.2em;
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .details {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .details div {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <!-- Inserta el video de YouTube para la música -->
-    <iframe src="https://www.youtube.com/embed/bQKfPbfokqc" allow="autoplay" autoplay="true"></iframe>
+<div class="container">
 
-    <div class="invitacion">
-        <h1 class="titulo">¡Estás invitado a nuestra boda!</h1>
-        
-        <!-- Imagen principal de la boda -->
-        <img class="imagen-boda" src="Cream_and_Brown_Minimalist_Illustrative_Wedding_Virtual_Invitation_6.png" alt="Invitación de boda" />
-        
-        <p class="mensaje">Tenemos el gusto de invitarte en este día tan importante de nuestras vidas a nuestra boda.</p>
-        <h2 class="titulo">Stian y Carol</h2>
-        <p class="mensaje">Domingo 26 de enero a las 2:30 PM</p>
-        <p class="mensaje">Salón de Eventos: “Ensueño”</p>
-        <p class="mensaje">Calle Iraya Isondu, 3 cuadras al oeste de Av. Reducto, Tiquipaya</p>
-        <p class="mensaje">Confirmar Asistencia al: 73775780</p>
-        
-        <!-- Línea de tiempo -->
-        <div class="linea-tiempo">
-            <img src="Cream and Brown Minimalist Illustrative Weeding Virtual Invitation.jpg" alt="Línea de tiempo de la boda" />
+    <!-- Header con los nombres -->
+    <header>
+        <h1>¡Estás invitado a nuestra boda!</h1>
+        <h2>Stian & Carol</h2>
+    </header>
+
+    <!-- Mensaje de la invitación -->
+    <p class="message">
+        Tenemos el honor de invitarte a nuestra boda, un día tan importante para nuestras vidas.
+    </p>
+
+    <!-- Imagen principal de la boda -->
+    <img class="main-image" src="Cream_and_Brown_Minimalist_Illustrative_Wedding_Virtual_Invitation_6.png" alt="Imagen de boda">
+
+    <!-- Detalles de la boda -->
+    <div class="details">
+        <div>
+            <h3>Fecha</h3>
+            <p>Domingo 26 de enero a las 2:30 PM</p>
         </div>
-
-        <!-- Slider de imágenes (galería) -->
-        <div class="slider">
-            <div class="slides">
-                <img src="Snapchat-568814332.jpg" alt="Imagen 1">
-                <img src="Snapchat-1892904974.jpg" alt="Imagen 2">
-                <img src="IMG_20230724_154005_719.jpg" alt="Imagen 3">
-                     <img src="IMG_20230724_154005_432.jpg" alt="Imagen 3">
-                     <img src="IMG_20230724_130720_473.jpg" alt="Imagen 3">
-                     <img src="IMG-20240106-WA0001.jpg" alt="Imagen 3">
-        
-                <!-- Agrega más imágenes si lo deseas -->
-            </div>
-            <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
-            <a class="next" onclick="moveSlide(1)">&#10095;</a>
+        <div>
+            <h3>Lugar</h3>
+            <p>Salón de Eventos “Ensueño”</p>
+            <p>Calle Iraya Isondu, 3 cuadras al oeste de Av. Reducto, Tiquipaya</p>
         </div>
-
-        <!-- Código QR -->
-        <div class="codigo-qr">
-            <p>Escanea el código QR para conocer la ubicación:</p>
-            <img src="qr.jpeg" alt="Código QR" />
+        <div>
+            <h3>Confirmación</h3>
+            <p>Confirma tu asistencia al número: 73775780</p>
         </div>
-
-        <p>💌 Sugerencia de regalo: dinero en efectivo</p>
-        <img src="dinero.jpeg" alt="Sugerencia de regalo" />
     </div>
 
-    <script>
-        // Variables
-        let slideIndex = 0;
+    <!-- Línea de tiempo de la boda -->
+    <img class="timeline-image" src="Cream and Brown Minimalist Illustrative Weeding Virtual Invitation.jpg" alt="Línea de tiempo de la boda">
 
-        // Función para mover las imágenes del slider
-        function moveSlide(step) {
-            const slides = document.querySelector('.slides');
-            const totalSlides = slides.children.length;
-            slideIndex = (slideIndex + step + totalSlides) % totalSlides;
-            slides.style.transform = `translateX(-${slideIndex * 100}%)`;
-        }
+    <!-- Slider de imágenes (galería) -->
+    <div class="slider">
+        <div class="slides">
+            <img src="Snapchat-568814332.jpg" alt="Imagen 1">
+            <img src="Snapchat-1892904974.jpg" alt="Imagen 2">
+            <img src="IMG_20230724_154005_719.jpg" alt="Imagen 3">
+            <img src="IMG_20230724_154005_432.jpg" alt="Imagen 4">
+            <img src="IMG_20230724_130720_473.jpg" alt="Imagen 5">
+            <img src="IMG-20240106-WA0001.jpg" alt="Imagen 6">
+        </div>
+        <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+        <a class="next" onclick="moveSlide(1)">&#10095;</a>
+    </div>
 
-        // Iniciar el slider automáticamente
-        setInterval(() => {
-            moveSlide(1); // Mover una imagen cada 5 segundos
-        }, 5000);
-    </script>
+    <!-- Botón de confirmación -->
+    <a href="mailto:73775780" class="confirm-btn">Confirmar Asistencia</a>
+
+    <!-- Código QR -->
+    <p class="message">Escanea el código QR para conocer la ubicación:</p>
+    <img class="qr-image" src="qr.jpeg" alt="Código QR">
+
+    <!-- Sugerencia de regalo -->
+    <footer>
+        <p>💌 Sugerencia de regalo: Dinero en efectivo</p>
+    </footer>
+
+</div>
+
+<script>
+    // Variables
+    let slideIndex = 0;
+
+    // Función para mover las imágenes del slider
+    function moveSlide(step) {
+        const slides = document.querySelector('.slides');
+        const totalSlides = slides.children.length;
+        slideIndex = (slideIndex + step + totalSlides) % totalSlides;
+        slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+    }
+
+    // Iniciar el slider automáticamente
+    setInterval(() => {
+        moveSlide(1); // Mover una imagen cada 5 segundos
+    }, 5000);
+</script>
 
 </body>
 </html>
+
