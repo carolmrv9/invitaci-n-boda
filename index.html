@@ -11,7 +11,7 @@
             padding: 0;
             background-image: url('corazones.jpg'); /* Ruta de la imagen de fondo */
             background-size: cover; /* Hace que la imagen cubra todo el fondo */
-            background-position: center; /* Centra la imagen */
+            background-position: center top; /* Centra la imagen y la ajusta */
             background-repeat: no-repeat; /* Evita que la imagen se repita */
             color: #333;
         }
@@ -76,6 +76,8 @@
             margin: 0 auto 30px auto;
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-height: 400px; /* Limita la altura de las imágenes */
+            height: auto; /* Mantiene la proporción */
         }
 
         /* Slider de imágenes */
@@ -94,7 +96,9 @@
         .slides img {
             width: 100%;
             height: auto;
+            max-height: 400px; /* Limita la altura de las imágenes en el slider */
         }
+
         .prev, .next {
             position: absolute;
             top: 50%;
@@ -179,7 +183,7 @@
                 font-size: 1.1em;
             }
 
-            /* Ajustar el iframe del video */
+            /* Ajuste de iframe para que se vea bien en móviles */
             iframe {
                 width: 100%;
                 height: auto;
@@ -241,14 +245,13 @@
     <!-- Botón de confirmación con enlace de WhatsApp -->
     <a href="https://wa.me/+59173775780" class="confirm-btn" target="_blank">Confirmar Asistencia</a>
 
-    <!-- Código QR -->
+    <!-- Ubicación de la boda en Google Maps -->
   <div class="text-box">
     <p class="message">Ubicación de la boda en Google Maps:</p>
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1904.1801646545118!2d-66.22805085618184!3d-17.34638590585661!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93e3752fbbb0418f%3A0x92a45eee9053227c!2sEnsue%C3%B1o%20Eventos!5e0!3m2!1sno!2sno!4v1732558730323!5m2!1sno!2sno" 
         width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
     </iframe>
 </div>
-
 
     <!-- Sugerencia de regalo dentro de un cuadro blanco -->
     <footer>
@@ -283,4 +286,3 @@
 
 </body>
 </html>
-
