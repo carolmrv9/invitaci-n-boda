@@ -62,128 +62,13 @@
             font-family: 'Poppins', sans-serif; /* Usamos Poppins para los textos */
         }
 
-        /* Texto de la invitación */
-        .message {
-            font-size: 1.2em;
-            line-height: 1.5;
-        }
-
-        /* Imágenes */
-        .main-image, .timeline-image, .qr-image, .dinero-image {
-            display: block;
+        /* El iframe del mapa */
+        iframe {
             width: 100%;
-            max-width: 900px;
-            margin: 0 auto 30px auto;
+            height: 450px;
+            border: none;
             border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Slider de imágenes */
-        .slider {
-            position: relative;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            overflow: hidden;
-            border-radius: 10px;
-        }
-        .slides {
-            display: flex;
-            transition: transform 1s ease;
-        }
-        .slides img {
-            width: 100%;
-            height: auto;
-        }
-        .prev, .next {
-            position: absolute;
-            top: 50%;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            padding: 10px;
-            cursor: pointer;
-            transform: translateY(-50%);
-        }
-        .prev { left: 0; }
-        .next { right: 0; }
-
-        /* Detalles de la boda */
-        .details {
-            display: flex;
-            justify-content: space-between;
-            text-align: center;
-            margin: 50px 0;
-        }
-
-        .details div {
-            width: 30%;
-            padding: 20px;
-            background-color: #FAF1E4;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .details h3 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-
-        .confirm-btn {
-            display: inline-block;
-            background-color: #d25d6f;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 25px;
-            font-size: 1.2em;
-            text-decoration: none;
-            text-align: center;
-            margin-top: 20px;
-            transition: background-color 0.3s ease;
-        }
-
-        .confirm-btn:hover {
-            background-color: #5A3F47;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            color: #888;
-        }
-
-        footer p {
-            font-size: 1.2em;
-        }
-
-        /* Responsividad */
-        @media (max-width: 768px) {
-            .details {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .details div {
-                width: 80%;
-                margin-bottom: 20px;
-            }
-
-            header h1 {
-                font-size: 2em;
-            }
-
-            header h2 {
-                font-size: 1.8em;
-            }
-
-            .message {
-                font-size: 1.1em;
-            }
-
-            /* Ajustar el iframe del video */
-            iframe {
-                width: 100%;
-                height: auto;
-            }
+            margin: 20px 0;
         }
     </style>
 </head>
@@ -205,79 +90,15 @@
         </p>
     </div>
 
-    <!-- Detalles de la boda dentro de cuadros blancos -->
-    <div class="details">
-        <div class="text-box">
-            <h3>Fecha</h3>
-            <p>Domingo 26 de enero a las 2:30 PM</p>
-        </div>
-        <div class="text-box">
-            <h3>Lugar</h3>
-            <p>Salón de Eventos “Ensueño”</p>
-            <p>Calle Iraya Isondu, 3 cuadras al oeste de Av. Reducto, Tiquipaya</p>
-        </div>
-        <div class="text-box">
-            <h3>Confirmación</h3>
-            <p>Confirma tu asistencia al número: 73775780</p>
-        </div>
-    </div>
-
-    <!-- Línea de tiempo de la boda -->
-    <img class="timeline-image" src="Cream and Brown Minimalist Illustrative Wedding Virtual Invitation.jpg" alt="Línea de tiempo de la boda">
-
-    <!-- Slider de imágenes (galería) -->
-    <div class="slider">
-        <div class="slides">
-            <img src="Snapchat-568814332.jpg" alt="Imagen 1">
-            <img src="Snapchat-1892904974.jpg" alt="Imagen 2">
-            <img src="IMG_20230724_154005_719.jpg" alt="Imagen 3">
-            <img src="IMG_20230724_154005_432.jpg" alt="Imagen 4">
-            <img src="IMG-20240106-WA0001.jpg" alt="Imagen 5">
-        </div>
-        <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
-        <a class="next" onclick="moveSlide(1)">&#10095;</a>
-    </div>
-
-    <!-- Botón de confirmación con enlace de WhatsApp -->
-    <a href="https://wa.me/+59173775780" class="confirm-btn" target="_blank">Confirmar Asistencia</a>
-
-    <!-- Código QR -->
+    <!-- Google Maps Embed -->
     <div class="text-box">
-    <p class="message">Escanea el código QR para conocer la ubicación:</p>
-    <iframe src="https://www.google.com/maps/place/Ensue%C3%B1o+Eventos/@-17.3463859,-66.2280509,18z/data=!4m6!3m5!1s0x93e3752fbbb0418f:0x92a45eee9053227c!8m2!3d-17.3461299!4d-66.2268224!16s%2Fg%2F11bzywj8yy?entry=ttu&g_ep=EgoyMDI0MTExOS4yIKXMDSoASAFQAw%3D%3D" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-</div>
+        <p class="message">Ubicación de la boda en Google Maps:</p>
+        <!-- Reemplaza el src con el código de inserción de Google Maps -->
+        <iframe src="https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE_HERE" allowfullscreen="" loading="lazy"></iframe>
+    </div>
 
-
-    <!-- Sugerencia de regalo dentro de un cuadro blanco -->
-    <footer>
-        <div class="text-box">
-            <p>💌 Sugerencia de regalo: Dinero en efectivo porque no vivimos en el país ❤️.</p>
-        </div>
-        <img class="dinero-image" src="dinero.jpeg" alt="Sugerencia de regalo" style="width: 150px; height: 150px; margin: 0 auto;">
-    </footer>
-
-<div class="container">
-
-<iframe src="https://www.youtube.com/embed/kWUV5-frRU4?autoplay=1&mute=1" allow="autoplay" style="width: 100%; height: auto; border:none;"></iframe>
-</div>
-
-<script>
-    // Variables
-    let slideIndex = 0;
-
-    // Función para mover las imágenes del slider
-    function moveSlide(step) {
-        const slides = document.querySelector('.slides');
-        const totalSlides = slides.children.length;
-        slideIndex = (slideIndex + step + totalSlides) % totalSlides;
-        slides.style.transform = `translateX(-${slideIndex * 100}%)`;
-    }
-
-    // Iniciar el slider automáticamente
-    setInterval(() => {
-        moveSlide(1); // Mover una imagen cada 5 segundos
-    }, 5000);
-</script>
+    <!-- Resto del contenido -->
+    <!-- Aquí puedes agregar el resto de tu contenido como detalles, imágenes, etc. -->
 
 </body>
 </html>
