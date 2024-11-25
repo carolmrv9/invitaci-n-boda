@@ -44,11 +44,19 @@
             font-style: italic;
         }
 
+        /* Estilo para los textos dentro de un cuadro blanco */
+        .text-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            text-align: center;
+        }
+
         /* Texto de la invitación */
         .message {
             font-size: 1.2em;
-            text-align: center;
-            margin: 20px;
             line-height: 1.5;
         }
 
@@ -171,33 +179,34 @@
 
 <iframe src="https://www.youtube.com/embed/kWUV5-frRU4?autoplay=1&mute=1" allow="autoplay" style="width: 100%; height: 315px; border:none;"></iframe>
 
-
     <!-- Header con los nombres -->
     <header>
         <h1>¡Estás invitado a nuestra boda!</h1>
         <h2>Stian & Carol</h2>
     </header>
 
-    <!-- Mensaje de la invitación -->
-    <p class="message">
-        Tenemos el honor de invitarte a nuestra boda, un día tan importante para nuestras vidas ❤️.
-    </p>
+    <!-- Mensaje de la invitación dentro de un cuadro blanco -->
+    <div class="text-box">
+        <p class="message">
+            Tenemos el honor de invitarte a nuestra boda, un día tan importante para nuestras vidas ❤️.
+        </p>
+    </div>
 
     <!-- Imagen principal de la boda -->
     <img class="main-image" src="main.jpg" alt="Invitación de boda">
 
-    <!-- Detalles de la boda -->
+    <!-- Detalles de la boda dentro de cuadros blancos -->
     <div class="details">
-        <div>
+        <div class="text-box">
             <h3>Fecha</h3>
             <p>Domingo 26 de enero a las 2:30 PM</p>
         </div>
-        <div>
+        <div class="text-box">
             <h3>Lugar</h3>
             <p>Salón de Eventos “Ensueño”</p>
             <p>Calle Iraya Isondu, 3 cuadras al oeste de Av. Reducto, Tiquipaya</p>
         </div>
-        <div>
+        <div class="text-box">
             <h3>Confirmación</h3>
             <p>Confirma tu asistencia al número: 73775780</p>
         </div>
@@ -223,12 +232,16 @@
     <a href="https://wa.me/+59173775780" class="confirm-btn" target="_blank">Confirmar Asistencia</a>
 
     <!-- Código QR -->
-    <p class="message">Escanea el código QR para conocer la ubicación:</p>
-    <img class="qr-image" src="qr.jpeg" alt="Código QR" style="width: 150px; height: 150px; margin: 0 auto;">
+    <div class="text-box">
+        <p class="message">Escanea el código QR para conocer la ubicación:</p>
+        <img class="qr-image" src="qr.jpeg" alt="Código QR" style="width: 150px; height: 150px; margin: 0 auto;">
+    </div>
 
-    <!-- Sugerencia de regalo -->
+    <!-- Sugerencia de regalo dentro de un cuadro blanco -->
     <footer>
-        <p>💌 Sugerencia de regalo: Dinero en efectivo</p>
+        <div class="text-box">
+            <p>💌 Sugerencia de regalo: Dinero en efectivo</p>
+        </div>
         <img class="dinero-image" src="dinero.jpeg" alt="Sugerencia de regalo" style="width: 150px; height: 150px; margin: 0 auto;">
     </footer>
 
@@ -254,5 +267,3 @@
 
 </body>
 </html>
-
-
