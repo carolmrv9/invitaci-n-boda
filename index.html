@@ -119,11 +119,10 @@
    <style>
     .slider {
         position: relative;
-        overflow: hidden;
-        width: 100%;
-        max-width: 1200px; /* Ajusta el ancho máximo del slider */
-        margin: 20px auto;
-        border-radius: 10px; /* Bordes redondeados opcionales */
+            width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 10px;
     }
 
     .slides {
@@ -133,10 +132,9 @@
     }
 
     .slides img {
-        width: 100%;
-        height: auto;
-        flex-shrink: 0;
-        object-fit: cover; /* Asegura que las imágenes cubran bien */
+          width: 100%;
+            height: auto;
+            max-height: 350px;
     }
 
     @keyframes slide {
