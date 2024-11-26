@@ -188,37 +188,12 @@
                 height: auto;
             }
         }
-
-        /* Styling for the timeline image and the slider to adjust its size */
-        .timeline-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .timeline-image {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto 30px auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            height: auto;
-        }
-        .slider-container {
-            margin-left: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .slider {
-            width: 200px;
-        }
-        .slider-label {
-            margin-bottom: 10px;
-        }
     </style>
 </head>
 <body>
+
+  <!-- Play Music Button to start audio if autoplay is blocked -->
+  <button onclick="document.getElementById('audioPlayer').play()">Play Music</button>
 
   <!-- MP3 Audio player -->
   <audio id="audioPlayer" loop>
@@ -226,40 +201,20 @@
       Your browser does not support the audio element.
   </audio>
 
-  <!-- Timeline Image with Resizing -->
-  <div class="timeline-container">
-      <img class="timeline-image" id="timelineImage" src="Cream and Brown Minimalist Illustrative Wedding Virtual Invitation.jpg" alt="Línea de tiempo de la boda">
-      
-      <!-- Slider to adjust image size -->
-      <div class="slider-container">
-          <label class="slider-label" for="sizeSlider">Adjust Image Size:</label>
-          <input type="range" id="sizeSlider" class="slider" min="50" max="150" value="100">
-          <span id="sizeValue">100%</span>
-      </div>
-  </div>
-
+  <!-- Add this JavaScript to ensure the audio plays on page load -->
   <script>
-      // Adjust Image Size
-      const slider = document.getElementById('sizeSlider');
-      const image = document.getElementById('timelineImage');
-      const sizeValue = document.getElementById('sizeValue');
-
-      slider.addEventListener('input', function() {
-          const newSize = slider.value + '%';
-          image.style.width = newSize;
-          sizeValue.textContent = newSize;
-      });
-
-      // Automatically play audio (with a play button fallback if needed)
       window.onload = function() {
           var audio = document.getElementById('audioPlayer');
+
+          // Try to play audio, handle error if any
           var playPromise = audio.play();
-          
+
           if (playPromise !== undefined) {
               playPromise.then(function() {
                   console.log('Audio is playing');
               }).catch(function(error) {
                   console.log('Autoplay was prevented:', error);
+                  // If autoplay is blocked, show the "Play Music" button
               });
           }
       }
@@ -334,6 +289,8 @@
         </iframe>
     </div>
 
+
+
     <!-- Gift Suggestion -->
     <footer>
         <div class="text-box">
@@ -354,7 +311,7 @@
             const slides = document.querySelector('.slides');
             const totalSlides = slides.children.length;
             slideIndex = (slideIndex + step + totalSlides) % totalSlides;
-            slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+            slides.style.transform = translateX(-${slideIndex * 100}%);
         }
 
         setInterval(() => {
@@ -363,4 +320,3 @@
     </script>
 </body>
 </html>
-
