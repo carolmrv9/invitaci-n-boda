@@ -286,36 +286,15 @@
     <a href="https://wa.me/+59173775780" class="confirm-btn" target="_blank">Confirmar Asistencia</a>
 
     <div class="image-grid">
-    <img src="IMG_20230724_154005_719.jpg" alt="Imagen 2">
-    <img src="IMG_20230724_154005_432.jpg" alt="Imagen 3">
-    <img src="IMG-20240106-WA0001.jpg" alt="Imagen 4">
     <img src="Snapchat-952186912 (1).jpg" alt="Imagen 5">
    
 </div>
   <!-- Línea de tiempo de la boda -->
     <img class="timeline-image" src="Cream and Brown Minimalist Illustrative Wedding Virtual Invitation.jpg" alt="Línea de tiempo de la boda">
-
-
-    <!-- Image Slider -->
-   <!-- Slider de imágenes (galería) -->
-    <!-- Grid of Images -->
-<div class="image-grid">
-    
-    <img src="Snapchat-2076816748 (3).jpg" alt="Imagen 6">
-    <img src="nieve 1.jpg" alt="Imagen 7">
-    <img src="Snapchat-1317809383 (1).jpg" alt="Imagen 8">
-    <img src="IMG_2306.JPG" alt="Imagen 9">
-  
-</div>
-</div>
-
-
-
-
-    <!-- Google Maps Location -->
+     <!-- Google Maps Location -->
      <!-- Ubicación de la boda en Google Maps -->
     <div class="text-box">
-        <p class="message">Ubicación de la boda en Google Maps 📍:</p>
+        <p class="message">Ubicación de la boda en Google Maps (Presiona el mapa)📍:</p>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1904.1801646545118!2d-66.22805085618184!3d-17.34638590585661!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93e3752fbbb0418f%3A0x92a45eee9053227c!2sEnsue%C3%B1o%20Eventos!5e0!3m2!1sno!2sno!4v1732558730323!5m2!1sno!2sno" 
         width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe>
@@ -329,41 +308,40 @@
         <img class="dinero-image" src="dinero.jpeg" alt="Sugerencia de regalo" style="width: 150px; height: 150px; margin: 0 auto;">
     </footer>
 
-    <div class="image-grid">
-    <img src="IMG_1970.jpg" alt="Imagen 10">
-    <img src="nieve 2.jpg" alt="Imagen 11">
-    <img src="IMG-20230711-WA0022.jpg" alt="Imagen 12">
-    <img src="20241026_162825 (1).jpg" alt="Imagen 14">
-    <img src="20240831_162025 (1).jpg" alt="Imagen 15">
-    <img src="20240825_103403 (1).jpg" alt="Imagen 16">
+
+    <!-- Image Slider -->
+   <!-- Slider de imágenes (galería) -->
+    <!-- Grid of Images -->
+<div class="slider">
+    <div class="slides">
+        <img src="IMG_20230724_154005_719.jpg" alt="Imagen 2">
+        <img src="IMG_20230724_154005_432.jpg" alt="Imagen 3">
+        <img src="IMG-20240106-WA0001.jpg" alt="Imagen 4">
+        <img src="Snapchat-2076816748 (3).jpg" alt="Imagen 6">
+        <img src="nieve 1.jpg" alt="Imagen 7">
+        <img src="Snapchat-1317809383 (1).jpg" alt="Imagen 8">
+        <img src="IMG_2306.JPG" alt="Imagen 9">
+        <img src="IMG_1970.jpg" alt="Imagen 10">
+        <img src="nieve 2.jpg" alt="Imagen 11">
+        <img src="IMG-20230711-WA0022.jpg" alt="Imagen 12">
+        <img src="20241026_162825 (1).jpg" alt="Imagen 14">
+        <img src="20240831_162025 (1).jpg" alt="Imagen 15">
+        <img src="20240825_103403 (1).jpg" alt="Imagen 16">
+    </div>
 </div>
- 
+  <script>
+    const slider = document.querySelector('.slides');
+    let isPaused = false;
 
-    <script>
-        let slideIndex = 0;
+    slider.addEventListener('mouseover', () => {
+        slider.style.animationPlayState = 'paused';
+        isPaused = true;
+    });
 
-        function moveSlide(step) {
-            const slides = document.querySelector('.slides');
-            const totalSlides = slides.children.length;
-            slideIndex = (slideIndex + step + totalSlides) % totalSlides;
-            slides.style.transform = `translateX(-${slideIndex * 100}%)`;
-        }
-
-        setInterval(() => {
-            moveSlide(1); 
-        }, 5000);
-        <script>
-        function getURLParameter(name) {
-            const params = new URLSearchParams(window.location.search);
-            return params.get(name);
-        }
-
-        const guestName = getURLParameter('nombre');
-
-        if (guestName) {
-            document.getElementById('personalizedName').textContent = `¡Estás invitado a nuestra boda, ${guestName}!`;
-            document.getElementById('guestName').textContent = guestName;
-        }
-    </script>
+    slider.addEventListener('mouseout', () => {
+        slider.style.animationPlayState = 'running';
+        isPaused = false;
+    });
+</script>
 </body>
 </html>
