@@ -131,33 +131,38 @@
         animation: slide 20s linear infinite;
     }
 
-    .slides img {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        flex-shrink: 0;
-        object-fit: cover;
-    }
+    /* Slider de imágenes */
+.slider {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
 
-    @keyframes slide {
-        0% {
-            transform: translateX(0%);
-        }
-        100% {
-            transform: translateX(-100%);
-        }
-    }
+.slides {
+    display: flex;
+    transition: transform 120s ease; /* Controla la velocidad y fluidez del movimiento */
+}
 
-    /* Responsiveness */
-    @media (max-width: 768px) {
-        .slider {
-            max-width: 100%; /* Usa todo el ancho de la pantalla */
-        }
+.slides img {
+    width: 100%;
+    height: auto;
+    max-height: 350px; /* Controla la altura máxima de las imágenes */
+}
 
-        .slides img {
-            max-height: 300px; /* Reduce la altura máxima en móviles */
-        }
-    }
+/* Flechas de navegación (opcional) */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+.prev { left: 0; }
+.next { right: 0; }
 
         /* Details section */
         .details {
