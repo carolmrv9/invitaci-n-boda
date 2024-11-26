@@ -227,12 +227,26 @@
 </style>
     </header>
 
-    <!-- Invitation message -->
-    <div class="text-box">
-        <p class="message">
-            Tenemos el honor de invitarte a nuestra boda, un día tan importante para nuestras vidas 👰❤️🤵.
-        </p>
-    </div>
+ <p class="message">
+    <span id="guestName"></span>, tenemos el honor de invitarte a nuestra boda, un día tan importante para nuestras vidas 👰❤️🤵.
+</p>
+
+<script>
+    // Función para obtener parámetros de la URL
+    function getURLParameter(name) {
+        const params = new URLSearchParams(window.location.search);
+        return params.get(name);
+    }
+
+    // Obtener el nombre desde la URL
+    const guestName = getURLParameter('nombre');
+
+    // Mostrar el nombre en la invitación
+    if (guestName) {
+        document.getElementById('guestName').textContent = guestName;
+    }
+</script>
+
     <div class="image-grid">
     <img src="Snapchat-568814332.jpg" alt="Imagen 1">
 </div>
