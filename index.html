@@ -116,41 +116,48 @@
 .image-grid img:hover {
     transform: scale(1.05); /* Slight zoom on hover for better interaction */
 }
+       .slider {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        max-width: 800px; /* Ajusta el ancho máximo */
+        margin: 20px auto; /* Centra el slider horizontalmente */
+        border-radius: 10px;
+    }
+
+    .slides {
+        display: flex;
+        width: calc(100% * 10); /* Cambia 10 por el número de imágenes */
+        animation: slide 20s linear infinite;
+    }
+
+    .slides img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    @keyframes slide {
+        0% {
+            transform: translateX(0%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    /* Responsiveness */
+    @media (max-width: 768px) {
         .slider {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    max-width: 800px; /* Ajusta el ancho máximo */
-    margin: 20px auto; /* Centra el slider horizontalmente */
-    border-radius: 10px; /* Opcional: bordes redondeados */
-}
-
-
-        .slides img {
-    width: 100%;
-    height: auto;
-    max-height: 500px; /* Opcional: altura máxima para las imágenes */
-    object-fit: cover; /* Ajusta cómo se recortan las imágenes */
-    flex-shrink: 0; /* Previene que las imágenes se reduzcan */
-}
-
-
-        .slides img {
-            width: 100%;
-            max-width: 100%;
-            height: auto;
-            flex-shrink: 0;
+            max-width: 100%; /* Usa todo el ancho de la pantalla */
         }
 
-        @keyframes slide {
-            0% {
-                transform: translateX(0%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
+        .slides img {
+            max-height: 300px; /* Reduce la altura máxima en móviles */
         }
-
+    }
 
         /* Details section */
         .details {
@@ -229,14 +236,6 @@
                 height: auto;
             }
     
-    .slider {
-        max-width: 100%; /* Usa todo el ancho de la pantalla */
-    }
-
-    .slides img {
-        max-height: 300px; /* Reduce la altura máxima en móviles */
-    }
-}
 
         }
     
