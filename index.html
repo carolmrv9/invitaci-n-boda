@@ -116,47 +116,57 @@
 .image-grid img:hover {
     transform: scale(1.05); /* Slight zoom on hover for better interaction */
 }
-       .slider {
+   <style>
+    .slider {
         position: relative;
         overflow: hidden;
         width: 100%;
-        max-width: 100px; /* Ajusta el ancho máximo */
-        margin: 20px auto; /* Centra el slider horizontalmente */
-        border-radius: 10px;
+        max-width: 1200px; /* Ajusta el ancho máximo del slider */
+        margin: 20px auto;
+        border-radius: 10px; /* Bordes redondeados opcionales */
     }
 
-       /* Slider de imágenes */
-     .slider {
-    position: relative;
-            width: 100%;
-            margin: 0 auto;
-            overflow: hidden;
-            border-radius: 10px;
-}
+    .slides {
+        display: flex;
+        width: calc(100% * 13); /* 13 es el número de imágenes */
+        animation: slide 30s linear infinite; /* Flujo continuo */
+    }
 
-.slides {
-    display: flex;
-            transition: transform 120s ease;
-}
+    .slides img {
+        width: 100%;
+        height: auto;
+        flex-shrink: 0;
+        object-fit: cover; /* Asegura que las imágenes cubran bien */
+    }
 
-.slides img {
-    width: 100%;
-            height: auto;
-            max-height: 350px;
-}
-
-
-        .prev, .next {
-            position: absolute;
-            top: 50%;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            padding: 10px;
-            cursor: pointer;
-            transform: translateY(-50%);
+    @keyframes slide {
+        0% {
+            transform: translateX(0%);
         }
-        .prev { left: 0; }
-        .next { right: 0; }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    .prev, .next {
+        position: absolute;
+        top: 50%;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+        transform: translateY(-50%);
+        z-index: 10;
+    }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+
 
         /* Details section */
         .details {
@@ -367,8 +377,6 @@
         <img src="20240831_162025 (1).jpg" alt="Imagen 15">
         <img src="20240825_103403 (1).jpg" alt="Imagen 16">
          </div>
-        <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
-        <a class="next" onclick="moveSlide(1)">&#10095;</a>
 </div>
     <!-- Gift Suggestion -->
     <footer>
@@ -384,20 +392,20 @@
    <!-- Slider de imágenes (galería) -->
     <!-- Grid of Images -->
 
-  <script>
-        let slideIndex = 0;
+<script>
+    let slideIndex = 0;
 
-        function moveSlide(step) {
-            const slides = document.querySelector('.slides');
-            const totalSlides = slides.children.length;
-            slideIndex = (slideIndex + step + totalSlides) % totalSlides;
-            slides.style.transform = translateX(-${slideIndex * 100}%);
-        }
+    function moveSlide(step) {
+        const slides = document.querySelector('.slides');
+        const totalSlides = slides.children.length;
+        slideIndex = (slideIndex + step + totalSlides) % totalSlides;
+        slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+    }
 
-        setInterval(() => {
-            moveSlide(1); 
-        }, 5000);
-    </script>
+    setInterval(() => {
+        moveSlide(1); 
+    }, 5000); // Cambia cada 5 segundos
+</script>
 
 
 </body>
