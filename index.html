@@ -126,26 +126,23 @@
     }
 
        /* Slider de imágenes */
-       .slider {
+     .slider {
     position: relative;
-    overflow: hidden;
-    width: 100%;
-    max-width: 1200px; /* Ajusta según tu diseño */
-    margin: 20px auto;
-    border-radius: 10px;
+            width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 10px;
 }
 
 .slides {
     display: flex;
-    transition: transform 1s ease-in-out; /* Mejora la fluidez del movimiento */
-    width: calc(100% * 13); /* Si hay 13 imágenes */
+            transition: transform 120s ease;
 }
 
 .slides img {
     width: 100%;
-    height: auto;
-    flex-shrink: 0;
-    object-fit: cover;
+            height: auto;
+            max-height: 350px;
 }
 
 
@@ -237,7 +234,16 @@
                 width: 100%;
                 height: auto;
             }
-    
+    @media (max-width: 768px) {
+    .slider {
+        max-width: 100%;
+    }
+
+    .slides img {
+        max-height: 300px; /* Reduce image height for mobile */
+    }
+}
+
 
         }
     
@@ -391,6 +397,7 @@
         moveSlide(1); 
     }, 5000);
 </script>
+
 
 </body>
 </html>
