@@ -384,19 +384,19 @@
         <a class="next" onclick="moveSlide(1)">&#10095;</a>
 </div>
   <script>
-    let slideIndex = 0;
+        let slideIndex = 0;
 
-    function moveSlide(step) {
-        const slides = document.querySelector('.slides');
-        const totalSlides = slides.children.length;
-        slideIndex = (slideIndex + step + totalSlides) % totalSlides;
-        slides.style.transform = `translateX(-${slideIndex * 100}%)`;
-    }
+        function moveSlide(step) {
+            const slides = document.querySelector('.slides');
+            const totalSlides = slides.children.length;
+            slideIndex = (slideIndex + step + totalSlides) % totalSlides;
+            slides.style.transform = translateX(-${slideIndex * 100}%);
+        }
 
-    setInterval(() => {
-        moveSlide(1); 
-    }, 5000);
-</script>
+        setInterval(() => {
+            moveSlide(1); 
+        }, 5000);
+    </script>
 
 
 </body>
