@@ -228,7 +228,8 @@
     </header>
 <div class="text-box">
  <p class="message">
-    <span id="guestName"></span>, tenemos el honor de invitarte a nuestra boda, un día tan importante para nuestras vidas 👰❤️🤵.
+  <h3><span id="guestName"></h3></span>, tenemos el honor de invitarte a nuestra boda, un día tan importante para nuestras vidas 👰❤️🤵.
+       <br>Te corresponden el número de pases:<h3><span id="guestPasses"></h3></span>.
 </p>
       </div>
 <script>
@@ -241,10 +242,19 @@
     // Obtener el nombre desde la URL
     const guestName = getURLParameter('nombre');
 
+    // Obtener el número de pases desde la URL
+    const guestPasses = getURLParameter('pases');
+
     // Mostrar el nombre en la invitación
     if (guestName) {
         document.getElementById('guestName').textContent = guestName;
     }
+
+    // Mostrar el número de pases en la invitación
+    if (guestPasses) {
+        document.getElementById('guestPasses').textContent = guestPasses;
+    }
+
 </script>
 
     <div class="image-grid">
