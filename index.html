@@ -323,6 +323,18 @@
         setInterval(() => {
             moveSlide(1); 
         }, 5000);
+        <script>
+        function getURLParameter(name) {
+            const params = new URLSearchParams(window.location.search);
+            return params.get(name);
+        }
+
+        const guestName = getURLParameter('nombre');
+
+        if (guestName) {
+            document.getElementById('personalizedName').textContent = `¡Estás invitado a nuestra boda, ${guestName}!`;
+            document.getElementById('guestName').textContent = guestName;
+        }
     </script>
 </body>
 </html>
