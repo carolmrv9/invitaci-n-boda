@@ -116,6 +116,40 @@
 .image-grid img:hover {
     transform: scale(1.05); /* Slight zoom on hover for better interaction */
 }
+        .slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px; /* Ajusta el ancho máximo */
+    margin: 20px auto; /* Centra el slider horizontalmente */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+
+        .slides img {
+    width: 100%;
+    height: auto;
+    max-height: 500px; /* Opcional: altura máxima para las imágenes */
+    object-fit: cover; /* Ajusta cómo se recortan las imágenes */
+    flex-shrink: 0; /* Previene que las imágenes se reduzcan */
+}
+
+
+        .slides img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            flex-shrink: 0;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
 
 
         /* Details section */
@@ -194,38 +228,18 @@
                 width: 100%;
                 height: auto;
             }
-        }
-        /* Aquí pega tu código del slider */
-        .slider {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            height: auto;
-            margin: 20px auto;
-            max-width: 1200px; /* Ajusta según tu diseño */
-        }
+    
+    .slider {
+        max-width: 100%; /* Usa todo el ancho de la pantalla */
+    }
 
-        .slides {
-            display: flex;
-            width: calc(100% * 13); /* Número de imágenes */
-            animation: slide 20s linear infinite; /* Duración del ciclo */
-        }
+    .slides img {
+        max-height: 300px; /* Reduce la altura máxima en móviles */
+    }
+}
 
-        .slides img {
-            width: 100%;
-            max-width: 100%;
-            height: auto;
-            flex-shrink: 0;
         }
-
-        @keyframes slide {
-            0% {
-                transform: translateX(0%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
+    
     </style>
 </head>
 <body>
