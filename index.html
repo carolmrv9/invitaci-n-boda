@@ -374,18 +374,18 @@
         <a class="next" onclick="moveSlide(1)">&#10095;</a>
 </div>
   <script>
-    const slider = document.querySelector('.slides');
-    let isPaused = false;
+        let slideIndex = 0;
 
-    slider.addEventListener('mouseover', () => {
-        slider.style.animationPlayState = 'paused';
-        isPaused = true;
-    });
+        function moveSlide(step) {
+            const slides = document.querySelector('.slides');
+            const totalSlides = slides.children.length;
+            slideIndex = (slideIndex + step + totalSlides) % totalSlides;
+            slides.style.transform = translateX(-${slideIndex * 100}%);
+        }
 
-    slider.addEventListener('mouseout', () => {
-        slider.style.animationPlayState = 'running';
-        isPaused = false;
-    });
-</script>
+        setInterval(() => {
+            moveSlide(1); 
+        }, 5000);
+    </script>
 </body>
 </html>
