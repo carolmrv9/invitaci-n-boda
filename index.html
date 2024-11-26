@@ -195,6 +195,37 @@
                 height: auto;
             }
         }
+        /* Aquí pega tu código del slider */
+        .slider {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: auto;
+            margin: 20px auto;
+            max-width: 1200px; /* Ajusta según tu diseño */
+        }
+
+        .slides {
+            display: flex;
+            width: calc(100% * 13); /* Número de imágenes */
+            animation: slide 20s linear infinite; /* Duración del ciclo */
+        }
+
+        .slides img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            flex-shrink: 0;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
     </style>
 </head>
 <body>
